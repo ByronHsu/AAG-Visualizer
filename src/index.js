@@ -2,10 +2,10 @@ import Viz from 'viz.js';
 import parser from './js/parser.js';
 import './js/animate.js';
 import './scss/index.scss';
-import opt01 from './assets/opt01.aag';
-import sim01 from './assets/sim01.aag';
-import strash01 from './assets/strash01.aag';
-import C432 from './assets/C432.aag';
+import opt01 from './aag/opt01.aag';
+import sim01 from './aag/sim01.aag';
+import strash01 from './aag/strash01.aag';
+import C432 from './aag/C432.aag';
 
 function handleFileUpload(event){
   var input = document.getElementById('input');
@@ -82,9 +82,8 @@ function handleClickDemo(e){
 
 
 function downloadSvg() {
-  var svg = $("svg").parent().html();
+  var svg = $("#image").html();
   var b64 = btoa(svg);
-  console.log(svg);
   var str = 'data:image/svg+xml;base64,\n'+b64;
   var url = str.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
 
@@ -110,7 +109,5 @@ document.getElementById('download').addEventListener('click', downloadSvg);
 document.getElementById('input').addEventListener('change', handleFileUpload);
 document.getElementById('btn').addEventListener('click', handleFileSelected);
 document.querySelectorAll('.demo-aag').forEach(dom=>{
-  console.log('hi');
-  console.log(dom);
   dom.addEventListener('click', handleClickDemo);
 })
