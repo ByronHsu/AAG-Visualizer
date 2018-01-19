@@ -1,7 +1,12 @@
 import Viz from 'viz.js';
-import parser from './parser.js';
-import './animate.js'
-import './scss/index.scss'
+import parser from './js/parser.js';
+import './js/animate.js';
+import './scss/index.scss';
+import opt01 from './assets/opt01.aag';
+import sim01 from './assets/sim01.aag';
+import strash01 from './assets/strash01.aag';
+
+console.log(opt01);
 
 function handleFileUpload(event){
   var input = document.getElementById('input');
@@ -39,7 +44,7 @@ function handleFileSelected(event) {
      }
 
      const image = Viz(digraph, { format: "svg" });
-     document.getElementById("image").innerHTML = image;
+     document.getElementById("image").innerHTML = `${input.files[0].name}<br/><br/>`+image;
    };
    reader.onprogress = function(){
      //FIXME spinning icon when loading
@@ -47,5 +52,32 @@ function handleFileSelected(event) {
    reader.readAsText(input.files[0]);
 };
 
+function handleClickDemo(e){
+  $('#btn').animateCss('rubberBand');
+  var fileName = e.target.firstChild.nodeValue.toString().replace(/\s/g,'');
+  var text;
+  switch(fileName){
+    case "opt01":
+      text = opt01;
+    break;
+    case "sim01":
+      text = sim01;
+    break;
+    case "strash01":
+      text = strash01;
+    break;
+  }
+  var obj = parser(text);
+  var digraph = obj.digraph;
+  var max = obj.max;
+  const image = Viz(digraph, { format: "svg" });
+  document.getElementById("image").innerHTML = `${fileName}<br/><br/>`+image;
+}
+
 document.getElementById('input').addEventListener('change', handleFileUpload);
 document.getElementById('btn').addEventListener('click', handleFileSelected);
+document.querySelectorAll('.demo-aag').forEach(dom=>{
+  console.log('hi');
+  console.log(dom);
+  dom.addEventListener('click', handleClickDemo);
+})
