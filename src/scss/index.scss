@@ -1,3 +1,29 @@
+#custom-download-btn{
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 3px;
+    padding: 3px;
+    position: absolute;
+    display: none;
+    &:hover{
+        color: #fff;
+        background-color: #595241;
+        transition: 0.5s;
+    }
+}
+.demo-aag{
+    cursor: pointer;
+    border: 1px solid #595241;
+    margin-right: 10px;
+    margin-left: 10px; 
+    padding: 5px;
+    &:hover{
+        color: #fff;
+        background-color: #595241;
+        transition: 0.5s;
+    }
+}
+
 //for svg scaling
 svg {
     max-width: 100%;
@@ -34,9 +60,6 @@ h1 {
    margin-bottom: 30px;
    padding: 30px;
    font-size: 20px;
-   &:focus{
-      outline: none;
-   }
    &:hover{
       background-color: #93b0ae;
       transition: background-color 0.5s;
@@ -75,7 +98,9 @@ input[type="file"] {
       transition: background-color 0.2s;
    }
 }
-
+*:focus{
+    outline: none;
+}
 //reset
 button{
     border:none;

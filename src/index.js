@@ -38,14 +38,14 @@ function handleFileSelected(event) {
      var max = obj.max;
      //FIXME throw an error and catch by reader.onerror
      if(max > 500){
-        document.getElementById("image").innerHTML = 'Sorry.\nThe File is too big.';
+        document.getElementById("status").innerHTML = 'Sorry.\nThe File is too big.';
         return;
      }
      var svgXml = Viz(digraph, { format: "svg" });
 
      document.getElementById("image").innerHTML = svgXml;
      document.getElementById("status").innerHTML = input.files[0].name;
-
+     document.getElementById("custom-download-btn").setAttribute("style", "display: inline");
    };
    reader.onprogress = function(){
      //FIXME spinning icon when loading
@@ -77,6 +77,7 @@ function handleClickDemo(e){
   const svgXml = Viz(digraph, { format: "svg" });
   document.getElementById("image").innerHTML = svgXml;
   document.getElementById("status").innerHTML = fileName;
+  document.getElementById("custom-download-btn").setAttribute("style", "display: inline");
 }
 
 
@@ -89,7 +90,8 @@ function downloadSvg() {
 
 
   var link = document.createElement('a');
-  var filename = 'aa.svg';
+  var filename = document.getElementById("status").firstChild.nodeValue;
+  filename += '.svg';
   if (typeof link.download === 'string') {
     link.href = url;
     link.download = filename;

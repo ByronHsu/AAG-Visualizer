@@ -7,6 +7,8 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AAG-Visualizer</title>
@@ -14,27 +16,27 @@
 <body>
     <h1>AAG-Visualizer<span>designed by Byron/Adrian, 2018</span></h1>
     <br/>
+    <div id="demo">
+            <button class="demo-aag">opt01</a>
+            <button class="demo-aag">sim01</a>
+            <button class="demo-aag">strash01</a>
+            <button class="demo-aag">C432</a>
+    </div>
     <div id="upload">
         <label for="input" class="custom-file-upload">
-            <i class="fa fa-cloud-upload"></i> Select .aag file
+            <i class="fa fa-upload" aria-hidden="true"></i> Select .aag file
         </label>
         <input id="input" type="file"/>
         <span id="fileName"> e.g. test.aag</span>
-        <!-- <label for="file-upload" class="custom-file-upload">
-            <i class="fa fa-cloud-upload"></i> Custom Upload
-        </label>
-        <input id="file-upload" type="file"/> -->
         <br/>
         <button id="btn">Visualize</button>
     </div>
-    <div id="demo">
-        <button class="demo-aag">opt01</a>
-        <button class="demo-aag">sim01</a>
-        <button class="demo-aag">strash101</a>
-        <button class="demo-aag">C432</a>
-    </div>
-    <button id="download">download img</button>
-    <div id="status"></div>
+    <span id="status"></span>
+    <label for="download" id="custom-download-btn">
+        <i class="fa fa-download" aria-hidden="true"></i> Download
+    </label>
+    <button id="download"></button>
+    <br/><br/>
     <div id="image"></div>
 </body>
 </html>
