@@ -82,7 +82,7 @@ function handleClickDemo(e){
 
 
 function downloadSvg() {
-  var svg = $("svg").parent().html();
+  var svg = $("#image").html();
   var b64 = btoa(svg);
   console.log(svg);
   var str = 'data:image/svg+xml;base64,\n'+b64;
