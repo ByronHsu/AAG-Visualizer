@@ -1,16 +1,18 @@
-![logo](https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/logo.png)
-![1](https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/1.png)
-![2](https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/2.png)
-![3](https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/3.png)
-![4](https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/4.png)
+<img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/1.png" width="850" height="500" />
+<p float="left">
+<img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/3.png" width="400" height="400" /><img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/4.png" width="400" height="400" />
+</p>
+<img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/src/assets/2.png" width="850" height="500" />
+
 
 # AAG-Visualizer &middot; [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-> 🎉 ✨ An elegant Visualizer for aag file with NodeJS + Express + Viz + webpack 
+<img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/logo.png" width="200" height="200" />
+> 🎉 ✨ An elegant Visualizer for visualizing aag file with NodeJS + Express + Viz + webpack 
 
 - [blog](https://github.com/ByronHsu/AAG-Visualizer)
 
 ## 0. Table of Contents  
-- [Setup Boilerplate](#1-setup-boilerplate)
+- [Setup AAG-Visualizer](#1-setup-boilerplate)
 - [Development and Production](#2-development-and-production)
 - [Supported Config](#3-supported-config)
 
