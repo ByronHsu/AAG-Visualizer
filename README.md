@@ -1,4 +1,4 @@
-<img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/assets/demo.gif"/>
+<img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/assets/demo_new.gif"/>
 
 # AAG-Visualizer &middot; [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 <img src="https://github.com/ByronHsu/AAG-Visualizer/blob/master/assets/logo.png" width="200" height="200" />
