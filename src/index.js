@@ -7,10 +7,6 @@ import sim01 from './aag/sim01.aag';
 import strash01 from './aag/strash01.aag';
 import C432 from './aag/C432.aag';
 
-// window.onload = ()=>{
-//   console.log('fuck');
-//   document.querySelector('body').setAttribute("style", "display: block");
-// }
 $(window).on('load', function() {
   document.querySelector('body').setAttribute("style", "display: block");
 });
