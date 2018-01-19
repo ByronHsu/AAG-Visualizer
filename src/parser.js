@@ -1,32 +1,6 @@
 function splitLine(input){
   return input.split(/\r?\n/)
 }
-
-// `digraph G {
-//   {
-//      rank = same;
-//      node [color=red;shape=box];
-//      PI1,PI2,PI3;
-//   }
-//   {
-//      rank = same;
-//      node [color=blue;shape=box]
-//      PO1,PO2;
-//   }
-//   {
-//      node [color=black;shape=invtrapezium]
-//      AIG1;
-//   }
-//   PI1;
-//   PI2;
-//   PI3;
-//   PI1->AIG1 [arrowhead=odot];
-//   PI2->AIG1 [arrowhead=none];
-//   AIG1->PO1 [arrowhead=none];
-//   PI3->PO1 [arrowhead=none];
-//   PI3->PO2 [arrowhead=none];
-// }
-// `
 function convertToDot(gateList){
   let digraph = `digraph G {`;
   //set layout
