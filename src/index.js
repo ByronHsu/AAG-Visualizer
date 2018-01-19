@@ -29,12 +29,20 @@ function handleFileSelected(event) {
    $('#btn').animateCss('rubberBand');
    reader.onload = function(){
      var text = reader.result;
-     var digraph = parser(text);
+     var obj = parser(text);
+     var digraph = obj.digraph;
+     var max = obj.max;
+     //FIXME throw an error and catch by reader.onerror
+     if(max > 500){
+        document.getElementById("image").innerHTML = 'Sorry.\nThe File is too big.';
+        return;
+     }
+
      const image = Viz(digraph, { format: "svg" });
      document.getElementById("image").innerHTML = image;
    };
    reader.onprogress = function(){
-     //spinning icon
+     //FIXME spinning icon when loading
    }
    reader.readAsText(input.files[0]);
 };
