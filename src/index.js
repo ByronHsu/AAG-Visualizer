@@ -86,13 +86,25 @@ function downloadSvg() {
   console.log(svg);
   var str = 'data:image/svg+xml;base64,\n'+b64;
   var url = str.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
-  // window.open(url);
-  location.href = url;
-  console.log(location.href);
+
+
+  var link = document.createElement('a');
+  var filename = 'aa.svg';
+  if (typeof link.download === 'string') {
+    link.href = url;
+    link.download = filename;
+    //Firefox requires the link to be in the body
+    document.body.appendChild(link);
+    //simulate click
+    link.click();
+    //remove the link when done
+    document.body.removeChild(link);
+  } else {
+    window.open(url);
+  }
 }
 
 document.getElementById('download').addEventListener('click', downloadSvg);
-
 document.getElementById('input').addEventListener('change', handleFileUpload);
 document.getElementById('btn').addEventListener('click', handleFileSelected);
 document.querySelectorAll('.demo-aag').forEach(dom=>{
