@@ -1,7 +1,11 @@
 import Viz from 'viz.js';
-import parser from './parser.js';
-import './animate.js'
-import './scss/index.scss'
+import parser from './js/parser.js';
+import './js/animate.js';
+import './scss/index.scss';
+import opt01 from './assets/opt01.aag';
+import sim01 from './assets/sim01.aag';
+import strash01 from './assets/strash01.aag';
+import C432 from './assets/C432.aag';
 
 function handleFileUpload(event){
   var input = document.getElementById('input');
@@ -38,9 +42,10 @@ function handleFileSelected(event) {
         return;
      }
      var svgXml = Viz(digraph, { format: "svg" });
-     var tmp = Viz.svgXmlToPngImageElement(svgXml);
-     // document.getElementById("image").innerHTML = image;
-     document.getElementById("image").appendChild(tmp);
+
+     document.getElementById("image").innerHTML = svgXml;
+     document.getElementById("status").innerHTML = input.files[0].name;
+
    };
    reader.onprogress = function(){
      //FIXME spinning icon when loading
@@ -48,22 +53,50 @@ function handleFileSelected(event) {
    reader.readAsText(input.files[0]);
 };
 
-
-function hey() {
-    var img = document.querySelector('img')
-    var url = img.src.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
-    var ifr = document.createElement('iframe');
-
-
-    ifr.style.display = 'none';
-    ifr.src = url;
-
-    document.body.appendChild(ifr);
-    var filename = 'tmp.png';
-    ifr.contentWindow.document.execCommand('SaveAs', false, fileName);
-    document.body.removeChild(ifr);
+function handleClickDemo(e){
+  $('#btn').animateCss('rubberBand');
+  var fileName = e.target.firstChild.nodeValue.toString().replace(/\s/g,'');
+  var text;
+  switch(fileName){
+    case "opt01":
+      text = opt01;
+    break;
+    case "sim01":
+      text = sim01;
+    break;
+    case "strash01":
+      text = strash01;
+    break;
+    case "C432":
+      text = C432;
+    break;
+  }
+  var obj = parser(text);
+  var digraph = obj.digraph;
+  var max = obj.max;
+  const svgXml = Viz(digraph, { format: "svg" });
+  document.getElementById("image").innerHTML = svgXml;
+  document.getElementById("status").innerHTML = fileName;
 }
 
-document.getElementById('foo').addEventListener('click', hey);
+
+function downloadSvg() {
+  var svg = $("svg").parent().html();
+  var b64 = btoa(svg);
+  console.log(svg);
+  var str = 'data:image/svg+xml;base64,\n'+b64;
+  var url = str.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+  // window.open(url);
+  location.href = url;
+  console.log(location.href);
+}
+
+document.getElementById('download').addEventListener('click', downloadSvg);
+
 document.getElementById('input').addEventListener('change', handleFileUpload);
 document.getElementById('btn').addEventListener('click', handleFileSelected);
+document.querySelectorAll('.demo-aag').forEach(dom=>{
+  console.log('hi');
+  console.log(dom);
+  dom.addEventListener('click', handleClickDemo);
+})

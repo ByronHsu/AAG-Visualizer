@@ -20,6 +20,10 @@ module.exports = {
         test: /\.scss$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
       },
+      {
+        test: /\.aag$/,
+        loaders: ['raw-loader']
+      }
     ],
   },
   plugins: [

@@ -1,3 +1,7 @@
 # issue
-- download按鈕 一鍵下載png
-- scale problem
+- download檔名
+- 加github link
+- editorConfig
+- eslint
+- prettier
+- deploy to github(hook)
