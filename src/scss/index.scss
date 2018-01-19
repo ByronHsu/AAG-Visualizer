@@ -1,5 +1,4 @@
 body{
-   font-family: Lato, Arial; 
    color: #595241;
    padding: 55px 25px;
    background-color: #ffffff;
@@ -7,13 +6,14 @@ body{
 }
 h1 {
    font-weight: normal;
-   font-size: 40px;
+   font-size: 60px;
    font-weight: normal;
-   text-transform: uppercase;
+
    span { 
-       font-size: 13px;
+       font-size: 18px;
        display: block;
        padding-left: 4px;
+       padding-left: 10px;
    }
 }
 #image{
@@ -24,9 +24,9 @@ h1 {
    background-color:  #accfcc;
    color: #fff;
    cursor: pointer;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   padding: 10px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   padding: 30px;
    font-size: 20px;
    &:focus{
       outline: none;
@@ -39,13 +39,14 @@ h1 {
 //for custom-file-upload
 #fileName{
 //    display: inline-block;
-//    width: 200px;
+//    width: 120px;
 //    text-align: right;
-   font-size: 14px;
-   color: #fff;
-   padding: 5px;
+   font-size: 16px;
+   font-family: 'Josefin Slab', serif;
+   color: #000;
+   padding: 8px;
    background-color: #b8ae9c;
-   opacity: 0.5;
+   opacity: 0.2;
 }
 input[type="file"] {
    display: none;
@@ -54,12 +55,13 @@ input[type="file"] {
    width: 150px;
    cursor: pointer;
    text-align: center;
-   font-size: 14px;
-   padding: 5px;
+   font-size: 16px;
+   padding: 8px;
    color: #fff;
-   background-color:  #595241;
+   font-family: 'Josefin Slab', serif;
+   background-color:  #b3b69e;
    &:hover{
-      background-color: #383328;
+      background-color: #595241;
       transition: background-color 0.5s;
    }
 }
@@ -78,5 +80,5 @@ button{
 *::before{
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Josefin Slab', serif;
 }
