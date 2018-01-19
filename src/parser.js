@@ -23,9 +23,10 @@ function convertToDot(gateList){
       digraph += `${gateList[i].id},`;  
     }
   }
-  if(hasPI === 1)
+  if(hasPI === 1){
     digraph = digraph.slice(0, -1); // delete last comma
-  digraph += `;\n`;
+    digraph += `;\n`;
+  }
   digraph += `}\n`;
 
   //po
@@ -39,9 +40,10 @@ function convertToDot(gateList){
       digraph += `${gateList[i].id},`;  
     }
   }
-  if(hasPO === 1)
+  if(hasPO === 1){
     digraph = digraph.slice(0, -1); // delete last comma
-  digraph += `;\n`;
+    digraph += `;\n`;
+  }
   digraph += `}\n`;
 
   //aig
@@ -54,9 +56,11 @@ function convertToDot(gateList){
       digraph += `${gateList[i].id},`;  
     }
   }
-  if(hasAIG === 1)
+  if(hasAIG === 1){
     digraph = digraph.slice(0, -1); // delete last comma
-  digraph += `;\n`;
+    digraph += `;\n`;
+  }
+
   digraph += `}\n`;
 
   //undef
@@ -130,7 +134,8 @@ function cirRead(FILE){
 
   // console.log(util.inspect(gateList,false, null))
   // console.log(miloa);
-  return convertToDot(gateList);
+
+  return {max:miloa[0],digraph:convertToDot(gateList)};
 }
 
 export default cirRead;
