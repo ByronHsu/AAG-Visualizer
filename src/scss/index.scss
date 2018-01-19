@@ -37,6 +37,10 @@ h1 {
    &:focus{
       outline: none;
    }
+   &:hover{
+      background-color: #93b0ae;
+      transition: background-color 0.5s;
+   }
 }
 
 #upload{
@@ -68,7 +72,7 @@ input[type="file"] {
    background-color:  #b3b69e;
    &:hover{
       background-color: #595241;
-      transition: background-color 0.5s;
+      transition: background-color 0.2s;
    }
 }
 
