@@ -12,8 +12,6 @@ function handleFileUpload(event){
   reader.readAsText(input.files[0]);
 }
 
-let png_src = "";
-
 function handleFileSelected(event) {
    var input = document.getElementById('input');
    var reader = new FileReader();
@@ -40,8 +38,9 @@ function handleFileSelected(event) {
         return;
      }
      var svgXml = Viz(digraph, { format: "svg" });
-     tmp = Viz.svgXmlToPngImageElement(svgXml);
-     document.getElementById("image").innerHTML = svgXml;
+     var tmp = Viz.svgXmlToPngImageElement(svgXml);
+     // document.getElementById("image").innerHTML = image;
+     document.getElementById("image").appendChild(tmp);
    };
    reader.onprogress = function(){
      //FIXME spinning icon when loading
@@ -50,34 +49,21 @@ function handleFileSelected(event) {
 };
 
 
-function downloadPng() {
-    var img = png_src;
-// ref: https://stackoverflow.com/questions/10473932/browser-html-force-download-of-image-from-src-dataimage-jpegbase64
-    var image_data = atob(img.src.split(',')[1]);
-    // Use typed arrays to convert the binary data to a Blob
-    var arraybuffer = new ArrayBuffer(image_data.length);
-    var view = new Uint8Array(arraybuffer);
-    for (var i=0; i<image_data.length; i++) {
-        view[i] = image_data.charCodeAt(i) & 0xff;
-    }
-    try {
-        // This is the recommended method:
-        var blob = new Blob([arraybuffer], {type: 'application/octet-stream'});
-    } catch (e) {
-        // The BlobBuilder API has been deprecated in favour of Blob, but older
-        // browsers don't know about the Blob constructor
-        // IE10 also supports BlobBuilder, but since the `Blob` constructor
-        //  also works, there's no need to add `MSBlobBuilder`.
-        var bb = new (window.WebKitBlobBuilder || window.MozBlobBuilder);
-        bb.append(arraybuffer);
-        var blob = bb.getBlob('application/octet-stream'); // <-- Here's the Blob
-    }
+function hey() {
+    var img = document.querySelector('img')
+    var url = img.src.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+    var ifr = document.createElement('iframe');
 
-    // Use the URL object to create a temporary URL
-    var url = (window.webkitURL || window.URL).createObjectURL(blob);
-    location.href = url; // <-- Download!
+
+    ifr.style.display = 'none';
+    ifr.src = url;
+
+    document.body.appendChild(ifr);
+    var filename = 'tmp.png';
+    ifr.contentWindow.document.execCommand('SaveAs', false, fileName);
+    document.body.removeChild(ifr);
 }
 
-document.getElementById('foo').addEventListener('click', downloadPng);
+document.getElementById('foo').addEventListener('click', hey);
 document.getElementById('input').addEventListener('change', handleFileUpload);
 document.getElementById('btn').addEventListener('click', handleFileSelected);
