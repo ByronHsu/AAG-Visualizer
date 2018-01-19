@@ -5,8 +5,7 @@ import './scss/index.scss';
 import opt01 from './assets/opt01.aag';
 import sim01 from './assets/sim01.aag';
 import strash01 from './assets/strash01.aag';
-
-console.log(opt01);
+import C432 from './assets/C432.aag';
 
 function handleFileUpload(event){
   var input = document.getElementById('input');
@@ -42,9 +41,9 @@ function handleFileSelected(event) {
         document.getElementById("image").innerHTML = 'Sorry.\nThe File is too big.';
         return;
      }
-
-     const image = Viz(digraph, { format: "svg" });
-     document.getElementById("image").innerHTML = `${input.files[0].name}<br/><br/>`+image;
+     var svgXml = Viz(digraph, { format: "svg" });
+     document.getElementById("image").innerHTML = svgXml;
+     document.getElementById("status").innerHTML = input.files[0].name;
    };
    reader.onprogress = function(){
      //FIXME spinning icon when loading
@@ -66,14 +65,30 @@ function handleClickDemo(e){
     case "strash01":
       text = strash01;
     break;
+    case "C432":
+      text = C432;
+    break;
   }
   var obj = parser(text);
   var digraph = obj.digraph;
   var max = obj.max;
-  const image = Viz(digraph, { format: "svg" });
-  document.getElementById("image").innerHTML = `${fileName}<br/><br/>`+image;
+  const svgXml = Viz(digraph, { format: "svg" });
+  document.getElementById("image").innerHTML = svgXml;
+  document.getElementById("status").innerHTML = fileName;
 }
 
+function downloadSvg() {
+  var svg = $("svg").parent().html();
+  var b64 = btoa(svg);
+  console.log(svg);
+  var str = 'data:image/svg+xml;base64,\n'+b64;
+  var url = str.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+  // window.open(url);
+  location.href = url;
+  console.log(location.href);
+}
+
+document.getElementById('download').addEventListener('click', downloadSvg);
 document.getElementById('input').addEventListener('change', handleFileUpload);
 document.getElementById('btn').addEventListener('click', handleFileSelected);
 document.querySelectorAll('.demo-aag').forEach(dom=>{
