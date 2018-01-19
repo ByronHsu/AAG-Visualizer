@@ -4,7 +4,7 @@
   "description": "Visulize AAG",
   "main": "index.js",
   "scripts": {
-    "server": "node server/server.js",
+    "start": "node server/server.js",
     "watch": "webpack --config webpack.config.dev.js --watch",
     "prod": "webpack --config webpack.config.prod.js"
   },
