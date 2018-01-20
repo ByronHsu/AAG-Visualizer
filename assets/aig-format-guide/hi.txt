@@ -1,0 +1,19 @@
+AAG-Visualizer: https://github.com/ByronHsu/AAG-Visualizer
+See medium tutorial now: https://goo.gl/g3cCkt
+
+Hey guys! AAG-Visualizer is a side project written in pure js.
+Inspired by the final project of Data Structure and Programming at my school.
+The goal is to visualize a complex and hard-to-understand circuit raw input file into a pretty and simple .svg file.
+
+(Click 3. Medium (tutorial) if you want to know what the project is about and what aag file format is) 
+
+However, I think this technique can be applied to more fields. For example, DAG, FSM, Blockchain, React Element Tree, Bundle Dependencies Graph...etc. can be implemented by similar methods. Therefore, I wrote a tutorial for using viz.js to build a fantastic visualizer in my Medium. I hope that it could provide help on graph visualizing websites or inspire anyone who has interest in developing similar things.
+
+[AAG-Visualizer]
+1. Demo: https://byronhsu.github.io/AAG-Visualizer/
+2. Github: https://github.com/ByronHsu/AAG-Visualizer
+3. Medium(tutorial): https://medium.com/…/a-complete-guide-to-build-your-own-vis…
+4. twitter: https://twitter.com/hsu_byron/status/954689056780075009
+
+Any PR and Issue is welcomed. 
+If you like my project, please give my github repo a STAR, give my twitter a RETWEET, give my medium a CLAP. Encouragement from you guys will certainly be the motivation for me to contribute to the open source society in the future!
