@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node server/server.js",
     "watch": "webpack --config webpack.config.dev.js --watch",
-    "prod": "webpack --config webpack.config.prod.js"
+    "prod": "webpack --config webpack.config.prod.js",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "precommit": "lint-staged"
   },
   "author": "Byron Hsu",
   "license": "MIT",
@@ -17,12 +20,24 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^0.23.1",
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.29.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.1",
     "node-sass": "^4.5.3",
+    "prettier": "^1.10.2",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.13.1",
     "webpack": "^3.10.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
