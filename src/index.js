@@ -1,4 +1,4 @@
-import Viz from 'viz.js';
+import Viz from 'viz.js/viz-lite.js';
 import parser from './js/parser.js';
 import './js/animate.js';
 import './scss/index.scss';
