@@ -48,6 +48,7 @@ function handleFileSelected(event) {
      var svgXml = Viz(digraph, { format: "svg" });
 
      document.getElementById("image").innerHTML = svgXml;
+     $('#image').animateCss('fadeIn');
      document.getElementById("status").innerHTML = input.files[0].name;
      document.getElementById("custom-download-btn").setAttribute("style", "display: inline");
    };
@@ -80,6 +81,7 @@ function handleClickDemo(e){
   var max = obj.max;
   const svgXml = Viz(digraph, { format: "svg" });
   document.getElementById("image").innerHTML = svgXml;
+  $('#image').animateCss('fadeIn');
   document.getElementById("status").innerHTML = fileName;
   document.getElementById("custom-download-btn").setAttribute("style", "display: inline");
 }
