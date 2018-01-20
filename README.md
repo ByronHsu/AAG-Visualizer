@@ -5,7 +5,7 @@
 
 > 🎉 ✨ An elegant Visualizer for visualizing aag file with [Viz.js](https://github.com/mdaines/viz.js)
 
-[Medium: A Complete Guide to Build Your own Visualizer Using Viz.js and Animate.css easily!](https://medium.com/@byronhsu/a-complete-guide-to-build-your-own-visualizer-using-viz-js-and-animate-css-easily-1eb5287fbd34)
+> 📒 📙 [Medium Tutorial](https://medium.com/@byronhsu/a-complete-guide-to-build-your-own-visualizer-using-viz-js-and-animate-css-easily-1eb5287fbd34): A Complete Guide to Build Your own Visualizer Using Viz.js and Animate.css easily!
 
 ## 0. Table of Contents  
 - [Setup AAG-Visualizer](#1-setup-aag-visualizer)
