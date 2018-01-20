@@ -42,22 +42,33 @@ Literals are used to declare whether the singal has been inverted.
 For gate number N, its non-inverted literal is 2N, while its inverted literal is 2N+1.
 Since input pins are never inverted, the literal is always even.
 See the example above, the file list
+
+```
 2
 4
+```
 as the input section.
 So the input gate ids are 1(2/2), 2(4/2).
  
 #### The output gates of the circuits is always numbered from M+1 to M+O, and in the file, the output gates are listed by their signal source literals, sorted by gate number.
 
 See the example above, M=8, 
+
+```
 9
 10
+```
+
 Output gate 9(M+1) has **inverted** 4(9/2) input, and output gate 10(M+2) has 5(10/2) input.
 
 #### Following the above is the AIG sections, each line consists the gate literal, followed by their fanin literals.
 See the example above, M=8, 
+
+```
 8 3 16
 10 5 2
+```
+
 For the first line, it means that aig gate 4(8/2) has **inverted** 1(3/2) input and 8(16/2) input.
 For the second line, it means that aig gate 5(10/2) has **inverted** 2(5/2) input and 1(2/2) input.
 
