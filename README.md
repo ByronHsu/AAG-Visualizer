@@ -1,4 +1,4 @@
-<img src="./assets/demo_new.gif" width="1000"/>
+y
 
 # AAG-Visualizer &middot; [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 <img src="./assets/logo.png" width="200" height="200" />
