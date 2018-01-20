@@ -27,10 +27,16 @@ function handleFileSelected(event) {
    //error handling
    if(input.files.length === 0) {
     $('#btn').animateCss('shake');
+    document.getElementById("status").innerHTML = 'Please upload a file first.';
+    document.getElementById("image").innerHTML = '';//clear svg
+    document.getElementById("custom-download-btn").setAttribute("style", "display: none");
     return;
    }else
    if(!/.aag/g.test(input.files[0].name)){
     $('#btn').animateCss('shake');
+    document.getElementById("status").innerHTML = 'Sorry.\nThe Format is wrong.';
+    document.getElementById("image").innerHTML = '';//clear svg
+    document.getElementById("custom-download-btn").setAttribute("style", "display: none");
     return;
    }
 
@@ -43,6 +49,8 @@ function handleFileSelected(event) {
      //FIXME throw an error and catch by reader.onerror
      if(max > 500){
         document.getElementById("status").innerHTML = 'Sorry.\nThe File is too big.';
+        document.getElementById("image").innerHTML = '';//clear svg
+        document.getElementById("custom-download-btn").setAttribute("style", "display: none");
         return;
      }
      var svgXml = Viz(digraph, { format: "svg" });
