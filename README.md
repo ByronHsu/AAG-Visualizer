@@ -35,7 +35,8 @@ npm start
 ```
 
 ## 3. Credits
-- fantastic graphviz library [viz.js](https://github.com/mdaines/viz.js)
+- Fantastic graphviz library [viz.js](https://github.com/mdaines/viz.js)
+- Best css animation library ever [animate.css](https://github.com/daneden/animate.css)
 
 ## 4. License
 - [MIT](./LICENSE)

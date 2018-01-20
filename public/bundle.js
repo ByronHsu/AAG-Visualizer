@@ -130,7 +130,7 @@ eval("exports.read = function (buffer, offset, isLE, mLen, nBytes) {\n  var e, m
 /* 10 */
 /***/ (function(module, exports) {
 
-eval("var toString = {}.toString;\n\nmodule.exports = Array.isArray || function (arr) {\n  return toString.call(arr) == '[object Array]';\n};\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./node_modules/buffer/node_modules/isarray/index.js\n// module id = 10\n// module chunks = 0\n\n//# sourceURL=webpack:///./node_modules/buffer/node_modules/isarray/index.js?");
+eval("var toString = {}.toString;\n\nmodule.exports = Array.isArray || function (arr) {\n  return toString.call(arr) == '[object Array]';\n};\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./node_modules/isarray/index.js\n// module id = 10\n// module chunks = 0\n\n//# sourceURL=webpack:///./node_modules/isarray/index.js?");
 
 /***/ }),
 /* 11 */
