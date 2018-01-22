@@ -18,7 +18,7 @@
 git clone https://github.com/ByronHsu/AAG-Visualizer.git
 npm install
 ```
-There are some aag examples in the example/ folder, you can upload it and have fun : ).
+There are some aag examples in the example/ folder, you can upload from it and have fun : ).
 
 ## 2. Development and Production
 

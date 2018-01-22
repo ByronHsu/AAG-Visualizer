@@ -8,11 +8,13 @@ AIGER files are used to describe logical circuits including only **primary input
 
 ## Format of AIGER files
 AIGER files consist of five parts:
+
 1. Header
 2. Input gates (primary inputs) (PIs)
 3. Output gates (primary outputs) (POs)
 4. AIGs (And-Inverter gates)
-5. Symbols of PIs and POs
+5. Symbols of PIs and POs （will not be included in this format guide)
+6. Comments
 
 Each gate is assigned a gate ID. Constant 0 gate is assigned gate ID 0 by default.
 (**The "const 0" gate is assigned ID 0 without explicit declaration.**)
