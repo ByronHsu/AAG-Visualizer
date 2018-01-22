@@ -32,6 +32,6 @@ module.exports = {
       filename: 'index.html',
     }),
     new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
-    new webpack.optimize.UglifyJsPlugin(),
+    new UglifyWebPackPlugin()
   ],
 };
